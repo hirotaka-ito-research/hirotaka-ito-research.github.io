@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Change ?v=4 to ?v=5 etc. whenever you update style.css, so browsers load the new version -->
+  <link rel="stylesheet" href="style.css?v=4">
 
   <!-- Marks that JS is on, so abstracts can collapse. Without JS, all abstracts simply show. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -20,32 +21,43 @@
 
   <div class="page">
 
-    <!-- ===================== PROFILE (left column on desktop) ===================== -->
-    <header class="profile">
-      <!-- Profile photo placeholder (Hidden for now until you have your image file ready)
-      <img class="profile-photo" src="images/profile.jpg" alt="Photo of Hirotaka Ito">
+    <!-- ===================== SIDEBAR (navy panel) ===================== -->
+    <aside class="sidebar">
+      <!-- Profile photo (hidden until you have it). Upload profile.jpg next to index.html, then remove the comment markers.
+      <img class="profile-photo" src="profile.jpg" alt="Photo of Hirotaka Ito">
       -->
 
       <h1 class="profile-name">Hirotaka Ito</h1>
-
       <p class="profile-role">
         PhD Candidate in Economics<br>
-        Universitat Pompeu Fabra (UPF)
+        Universitat Pompeu Fabra
       </p>
 
-      <p class="profile-market">On the 2026–2027 academic job market</p>
-
       <ul class="profile-links">
-        <li><a href="mailto:hirotaka.ito@upf.edu">hirotaka.ito@upf.edu</a></li>
-        <li><a href="Ito_CV.pdf">CV</a></li>
+        <li>
+          <a href="Ito_CV.pdf" class="cv-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
+            CV
+          </a>
+        </li>
+        <li>
+          <a href="mailto:hirotaka.ito@upf.edu" aria-label="Email: hirotaka.ito@upf.edu" title="hirotaka.ito@upf.edu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+        </li>
       </ul>
-    </header>
 
-    <!-- ===================== MAIN CONTENT (right column on desktop) ===================== -->
+      <nav class="side-nav" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
     <main class="content">
 
-      <!-- About Me -->
-      <section id="about">
+      <!-- Intro -->
+      <section id="about" class="intro">
         <p>
           Welcome! I am a PhD candidate in Economics at Universitat Pompeu Fabra (UPF), under the
           supervision of Professor Geert Mesters.
@@ -54,61 +66,61 @@
           My research interest is in econometrics, with a focus on inference for partially
           identified models, Bayesian inference, statistical decision theory, and their applications.
         </p>
+        <p>I am on the <strong>2026–2027 job market</strong>.</p>
       </section>
 
       <!-- Research: job market paper first (highlighted), then working papers -->
       <section id="research">
-        <h2>Research</h2>
+        <h2 class="section-label">Research</h2>
 
         <article class="paper jmp-paper">
           <p class="paper-label">Job market paper</p>
           <h3 class="paper-title">Asymptotic Minimax Optimality of Set Estimation</h3>
+          <p class="paper-meta">draft coming soon</p>
+          <!-- When the draft is ready, replace the line above with:
+          <p class="paper-meta"><a href="Ito_JMP.pdf">Paper (PDF)</a></p>
+          -->
 
-          <p class="abstract collapsible" id="abs-jmp">
-            Parameters of interest are often expressed as transformations of partially identified
-            raw parameters. In such settings, the identified set of the targeted objects can be
-            non-convex and there are no theoretical results on how well one can learn it from data.
-            This paper fills part of this gap by studying the asymptotic efficiency of set estimation
-            for a general class of identified sets. I first derive the asymptotic minimax efficiency
-            bound for set estimators under risk functions based on the Hausdorff metric. A key
-            ingredient in the analysis is a limit experiment framework tailored to the local structure
-            of the identified set. I then show that a set estimator based on a criterion function is
-            efficient under mild conditions. The analysis requires deriving the limiting distribution
-            of the set estimator in the Hausdorff metric, which I obtain without globally
-            characterizing the identified set via its support functions. Based on the limiting
-            distribution, I propose a bootstrap-based confidence set. I illustrate my framework with
-            an application to optimal taxation with behavioral agents.
-          </p>
-
-          <p class="paper-links">
-            <a href="#abs-jmp" class="abstract-toggle" aria-controls="abs-jmp" aria-expanded="false">Abstract</a>
-            <span class="sep">·</span>
-            <span class="coming-soon" style="color: #666; font-style: italic;">Draft coming soon</span>
-          </p>
+          <button class="abstract-toggle" aria-controls="abs-jmp" aria-expanded="false">Abstract</button>
+          <div class="abstract collapsible" id="abs-jmp">
+            <p>
+              Parameters of interest are often expressed as transformations of partially identified
+              raw parameters. In such settings, the identified set of the targeted objects can be
+              non-convex and there are no theoretical results on how well one can learn it from data.
+              This paper fills part of this gap by studying the asymptotic efficiency of set estimation
+              for a general class of identified sets. I first derive the asymptotic minimax efficiency
+              bound for set estimators under risk functions based on the Hausdorff metric. A key
+              ingredient in the analysis is a limit experiment framework tailored to the local structure
+              of the identified set. I then show that a set estimator based on a criterion function is
+              efficient under mild conditions. The analysis requires deriving the limiting distribution
+              of the set estimator in the Hausdorff metric, which I obtain without globally
+              characterizing the identified set via its support functions. Based on the limiting
+              distribution, I propose a bootstrap-based confidence set. I illustrate my framework with
+              an application to optimal taxation with behavioral agents.
+            </p>
+          </div>
         </article>
 
         <article class="paper">
           <h3 class="paper-title">Uniform and Locally Adaptive Quasi-Bayesian Inference for Conditional Moment Models</h3>
+          <p class="paper-meta">draft coming soon</p>
 
-          <p class="abstract collapsible" id="abs-wp1">
-            This paper proposes a quasi-Bayesian method to construct confidence bands for a
-            nonparametric function in conditional moment models. Importantly, we allow the true
-            function to possess inhomogeneous smoothness over its domain, reflecting the locally
-            varying complexity of the function of interest. Our confidence bands are constructed
-            from quasi-Bayes posteriors with sieve GMM criterion functions and spike-and-slab priors.
-            We show that the quasi-Bayes posteriors contract to the true function in the supremum
-            norm at a rate that adapts to the unknown local smoothness. Based on this result, we
-            derive a nonparametric Bernstein–von Mises-type result for the quasi-Bayes posteriors,
-            in which the well-known covariance mismatch is avoided through the use of GMM criterion
-            functions. The resulting confidence bands are shown to achieve exact asymptotic coverage,
-            while their widths, measured in the supremum norm, shrink at a nearly locally adaptive rate.
-          </p>
-
-          <p class="paper-links">
-            <a href="#abs-wp1" class="abstract-toggle" aria-controls="abs-wp1" aria-expanded="false">Abstract</a>
-            <span class="sep">·</span>
-            <span class="coming-soon" style="color: #666; font-style: italic;">Draft coming soon</span>
-          </p>
+          <button class="abstract-toggle" aria-controls="abs-wp1" aria-expanded="false">Abstract</button>
+          <div class="abstract collapsible" id="abs-wp1">
+            <p>
+              This paper proposes a quasi-Bayesian method to construct confidence bands for a
+              nonparametric function in conditional moment models. Importantly, we allow the true
+              function to possess inhomogeneous smoothness over its domain, reflecting the locally
+              varying complexity of the function of interest. Our confidence bands are constructed
+              from quasi-Bayes posteriors with sieve GMM criterion functions and spike-and-slab priors.
+              We show that the quasi-Bayes posteriors contract to the true function in the supremum
+              norm at a rate that adapts to the unknown local smoothness. Based on this result, we
+              derive a nonparametric Bernstein–von Mises-type result for the quasi-Bayes posteriors,
+              in which the well-known covariance mismatch is avoided through the use of GMM criterion
+              functions. The resulting confidence bands are shown to achieve exact asymptotic coverage,
+              while their widths, measured in the supremum norm, shrink at a nearly locally adaptive rate.
+            </p>
+          </div>
         </article>
 
         <!-- Hidden for now. Remove the comment markers to show it again.
@@ -120,7 +132,7 @@
 
       <!-- Teaching -->
       <section id="teaching">
-        <h2>Teaching</h2>
+        <h2 class="section-label">Teaching</h2>
 
         <h3 class="teaching-institution">Barcelona School of Economics</h3>
         <ul class="teaching-list">
@@ -162,16 +174,32 @@
     </main>
   </div>
 
-  <!-- Toggles collapsible abstracts when you click "Abstract" -->
   <script>
-    document.querySelectorAll('.abstract-toggle').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var abs = document.getElementById(link.getAttribute('aria-controls'));
+    // Open/close abstracts
+    document.querySelectorAll('.abstract-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var abs = document.getElementById(btn.getAttribute('aria-controls'));
         var open = abs.classList.toggle('open');
-        link.setAttribute('aria-expanded', open);
+        btn.setAttribute('aria-expanded', open);
       });
     });
+
+    // Highlight the sidebar menu item for the section currently on screen
+    var navLinks = document.querySelectorAll('.side-nav a');
+    var sections = Array.prototype.map.call(navLinks, function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    function updateNav() {
+      var current = 0;
+      sections.forEach(function (s, i) {
+        if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i;
+      });
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) current = sections.length - 1;
+      navLinks.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav);
+    updateNav();
   </script>
 
 </body>
