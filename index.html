@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Change ?v=5 to ?v=6 etc. whenever you update style.css, so browsers load the new version -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <!-- Change ?v=7 to ?v=8 etc. whenever you update style.css, so browsers load the new version -->
+  <link rel="stylesheet" href="style.css?v=7">
 
   <!-- Marks that JS is on, so abstracts can collapse. Without JS, all abstracts simply show. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -51,6 +51,13 @@
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
       </nav>
+
+      <address class="sidebar-address">
+        Department of Economics and Business<br>
+        Universitat Pompeu Fabra<br>
+        Ramon Trias Fargas 25–27<br>
+        08005 Barcelona, Spain
+      </address>
     </aside>
 
     <!-- ===================== MAIN CONTENT ===================== -->
@@ -77,11 +84,13 @@
           <p class="paper-label">Job market paper</p>
           <h3 class="paper-title">Asymptotic Minimax Optimality of Set Estimation</h3>
           <p class="paper-meta">draft coming soon</p>
-          <!-- When the draft is ready, replace the line above with:
-          <p class="paper-meta"><a href="Ito_JMP.pdf">Paper (PDF)</a></p>
-          -->
 
-          <button class="abstract-toggle" aria-controls="abs-jmp" aria-expanded="false">Abstract</button>
+          <div class="paper-links">
+            <button class="chip abstract-toggle" aria-controls="abs-jmp" aria-expanded="false">Abstract</button>
+            <!-- When the draft is ready, delete "draft coming soon" above and remove the comment markers here:
+            <a class="chip" href="Ito_JMP.pdf">PDF</a>
+            -->
+          </div>
           <div class="abstract collapsible" id="abs-jmp">
             <p>
               Parameters of interest are often expressed as transformations of partially identified
@@ -105,7 +114,9 @@
           <h3 class="paper-title">Uniform and Locally Adaptive Quasi-Bayesian Inference for Conditional Moment Models</h3>
           <p class="paper-meta">draft coming soon</p>
 
-          <button class="abstract-toggle" aria-controls="abs-wp1" aria-expanded="false">Abstract</button>
+          <div class="paper-links">
+            <button class="chip abstract-toggle" aria-controls="abs-wp1" aria-expanded="false">Abstract</button>
+          </div>
           <div class="abstract collapsible" id="abs-wp1">
             <p>
               This paper proposes a quasi-Bayesian method to construct confidence bands for a
