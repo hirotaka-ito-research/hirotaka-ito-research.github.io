@@ -21,7 +21,7 @@
   --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --sidebar-width: 30%;     /* sidebar : content = 30 : 70 on laptops and PCs */
-  --content-width: 820px;   /* max width of the text column */
+  --content-width: 54.6667rem;   /* max width of the text column */
 }
 
 /* ---------- Base ---------- */
@@ -33,7 +33,7 @@
 }
 
 html {
-  font-size: 15px;          /* base size for all text except the name */
+  font-size: 15px;          /* base size; everything on the page is measured from this */
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
@@ -43,7 +43,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 1.0667rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,7 +65,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.2rem;
 }
 
 a:focus-visible,
@@ -93,7 +93,7 @@ button:focus-visible {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding: 64px 40px 40px;
+  padding: 4.2667rem 2.6667rem 2.6667rem;
   background: linear-gradient(170deg, var(--navy-top) 0%, var(--navy-bottom) 100%);
   color: var(--side-text);
 }
@@ -105,43 +105,43 @@ button:focus-visible {
 .profile-photo {
   display: block;
   width: 100%;
-  max-width: 260px;
+  max-width: 17.3333rem;
   aspect-ratio: 5 / 6;
   object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 28px;
+  border-radius: 0.9333rem;
+  margin-bottom: 1.8667rem;
 }
 
 .profile-name {
-  font-size: 27px;          /* fixed, so the name keeps its size */
+  font-size: 1.8rem;          
   letter-spacing: -0.015em;
   font-weight: 500;
   line-height: 1.2;
-  margin: 0 0 10px;
+  margin: 0 0 0.6667rem;
 }
 
 .profile-role {
   color: var(--side-muted);
   font-size: 0.95rem;
   line-height: 1.45;
-  margin: 0 0 22px;
+  margin: 0 0 1.4667rem;
 }
 
 /* CV and email icons */
 .profile-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 1.2rem;
   list-style: none;
-  padding: 0 0 28px;
-  margin: 0 0 28px;
+  padding: 0 0 1.8667rem;
+  margin: 0 0 1.8667rem;
   border-bottom: 1px solid var(--side-line);
 }
 
 .profile-links a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.4rem;
   color: var(--side-text);
   font-size: 0.9rem;
   font-weight: 600;
@@ -154,8 +154,8 @@ button:focus-visible {
 }
 
 .profile-links svg {
-  width: 22px;
-  height: 22px;
+  width: 1.4667rem;
+  height: 1.4667rem;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -164,15 +164,15 @@ button:focus-visible {
 }
 
 .profile-links .cv-link svg {
-  width: 18px;
-  height: 18px;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 /* Section menu */
 .side-nav a {
   display: block;
-  padding: 6px 0;
-  margin-bottom: 6px;
+  padding: 0.4rem 0;
+  margin-bottom: 0.4rem;
   color: var(--side-text);
   font-size: 1rem;
   font-weight: 500;
@@ -190,7 +190,7 @@ button:focus-visible {
 /* University address, pinned to the bottom of the sidebar */
 .sidebar-address {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 1.6rem;
   border-top: 1px solid var(--side-line);
   color: var(--side-muted);
   font-size: 0.95rem;   /* same as "PhD Candidate in Economics" */
@@ -199,24 +199,24 @@ button:focus-visible {
 }
 
 .side-nav {
-  margin-bottom: 40px;
+  margin-bottom: 2.6667rem;
 }
 
 /* ---------- Main content ---------- */
 
 .content {
   width: 100%;
-  max-width: calc(var(--content-width) + 192px);
+  max-width: calc(var(--content-width) + 12.8rem);
   margin: 0 auto;           /* centers the text column in the white area */
-  padding: 88px 96px 64px;
+  padding: 5.8667rem 6.4rem 4.2667rem;
 }
 
 .intro {
-  margin-bottom: 72px;
+  margin-bottom: 4.8rem;
 }
 
 .content section {
-  margin-bottom: 72px;
+  margin-bottom: 4.8rem;
 }
 
 .section-label {
@@ -225,15 +225,15 @@ button:focus-visible {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  padding-bottom: 12px;
-  margin: 0 0 32px;
+  padding-bottom: 0.8rem;
+  margin: 0 0 2.1333rem;
   border-bottom: 2px solid var(--rule);
 }
 
 /* ---------- Papers ---------- */
 
 .paper {
-  margin-bottom: 44px;
+  margin-bottom: 2.9333rem;
 }
 
 .paper:last-child {
@@ -246,40 +246,40 @@ button:focus-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 0 0 4px;
+  margin: 0 0 0.2667rem;
 }
 
 .paper-title {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.3;
-  margin: 0 0 4px;
+  margin: 0 0 0.2667rem;
 }
 
 .jmp-paper {
-  margin-bottom: 56px;
+  margin-bottom: 3.7333rem;
 }
 
 
 .paper-meta {
   color: var(--muted);
   font-size: 0.95rem;
-  margin: 0 0 14px;
+  margin: 0 0 0.9333rem;
 }
 
 /* Row of boxed links under each paper: Abstract, PDF, Slides, ... */
 .paper-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.6667rem;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
+  padding: 0.4rem 0.9333rem;
   border: 0;
-  border-radius: 3px;
+  border-radius: 0.2rem;
   background: #ebe7dd;
   cursor: pointer;
   font-family: var(--font);
@@ -299,8 +299,8 @@ button:focus-visible {
 }
 
 .abstract {
-  margin-top: 14px;
-  padding-left: 18px;
+  margin-top: 0.9333rem;
+  padding-left: 1.2rem;
   border-left: 2px solid #e2ded3;
   font-size: 0.97rem;
 }
@@ -323,13 +323,13 @@ button:focus-visible {
 .teaching-institution {
   font-size: 1rem;
   font-weight: 600;
-  margin: 0 0 12px;
+  margin: 0 0 0.8rem;
 }
 
 .teaching-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0 0 2.1333rem;
 }
 
 .teaching-list:last-child {
@@ -337,7 +337,7 @@ button:focus-visible {
 }
 
 .teaching-list li {
-  margin-bottom: 12px;
+  margin-bottom: 0.8rem;
 }
 
 .course {
@@ -359,17 +359,27 @@ button:focus-visible {
 }
 
 /* =========================================================
+   Large desktop screens: scale the whole page up in proportion,
+   so it looks like the laptop view, only bigger
+   ========================================================= */
+@media (min-width: 1441px) {
+  html {
+    font-size: min(1.0417vw, 21px);   /* 15px at 1440px wide, grows with the screen, capped */
+  }
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 
 /* Smaller laptops / iPad landscape */
 @media (max-width: 1100px) {
   .sidebar {
-    padding: 48px 30px 32px;
+    padding: 3.2rem 2rem 2.1333rem;
   }
 
   .content {
-    padding: 72px 56px 56px;
+    padding: 4.8rem 3.7333rem 3.7333rem;
   }
 }
 
@@ -383,68 +393,68 @@ button:focus-visible {
     position: static;
     height: auto;
     overflow: visible;
-    padding: 44px 28px 32px;
+    padding: 2.9333rem 1.8667rem 2.1333rem;
   }
 
   .profile-photo {
-    max-width: 160px;
+    max-width: 10.6667rem;
   }
 
   .profile-links {
-    padding-bottom: 24px;
-    margin-bottom: 20px;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.3333rem;
   }
 
   /* Section menu becomes a wrapping row of links */
   .side-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 28px;
+    gap: 0.2667rem 1.8667rem;
   }
 
   .side-nav a {
-    padding: 4px 0;
+    padding: 0.2667rem 0;
     margin: 0;
     font-size: 1.05rem;
   }
 
   .side-nav {
-    margin-bottom: 24px;
+    margin-bottom: 1.6rem;
   }
 
   .sidebar-address {
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 1.3333rem;
   }
 
   .content {
-    max-width: 720px;
+    max-width: 48rem;
     margin: 0 auto;
-    padding: 48px 28px 48px;
+    padding: 3.2rem 1.8667rem 3.2rem;
   }
 }
 
 /* iPhone */
 @media (max-width: 480px) {
   body {
-    font-size: 15px;
+    font-size: 1rem;
   }
 
   .sidebar {
-    padding: 36px 20px 28px;
+    padding: 2.4rem 1.3333rem 1.8667rem;
   }
 
   .profile-name {
-    font-size: 24px;
+    font-size: 1.6rem;
   }
 
   .content {
-    padding: 40px 20px 40px;
+    padding: 2.6667rem 1.3333rem 2.6667rem;
   }
 
   .content section,
   .intro {
-    margin-bottom: 56px;
+    margin-bottom: 3.7333rem;
   }
 }
 
