@@ -20,8 +20,8 @@
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
-  --sidebar-width: 340px;
-  --content-width: 720px;
+  --sidebar-width: 30%;     /* sidebar : content = 30 : 70 on laptops and PCs */
+  --content-width: 820px;   /* max width of the text column */
 }
 
 /* ---------- Base ---------- */
@@ -33,6 +33,7 @@
 }
 
 html {
+  font-size: 15px;          /* base size for all text except the name */
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
@@ -42,7 +43,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -112,7 +113,7 @@ button:focus-visible {
 }
 
 .profile-name {
-  font-size: 1.7rem;
+  font-size: 27px;          /* fixed, so the name keeps its size */
   letter-spacing: -0.015em;
   font-weight: 500;
   line-height: 1.2;
@@ -206,6 +207,7 @@ button:focus-visible {
 .content {
   width: 100%;
   max-width: calc(var(--content-width) + 192px);
+  margin: 0 auto;           /* centers the text column in the white area */
   padding: 88px 96px 64px;
 }
 
@@ -362,10 +364,6 @@ button:focus-visible {
 
 /* Smaller laptops / iPad landscape */
 @media (max-width: 1100px) {
-  :root {
-    --sidebar-width: 280px;
-  }
-
   .sidebar {
     padding: 48px 30px 32px;
   }
@@ -429,7 +427,7 @@ button:focus-visible {
 /* iPhone */
 @media (max-width: 480px) {
   body {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .sidebar {
@@ -437,7 +435,7 @@ button:focus-visible {
   }
 
   .profile-name {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   .content {
