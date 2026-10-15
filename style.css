@@ -105,7 +105,7 @@ button:focus-visible {
 .profile-photo {
   display: block;
   width: 100%;
-  max-width: 17.3333rem;
+  max-width: 14rem;          /* photo width on laptops (PCs scale it up) */
   aspect-ratio: 5 / 6;
   object-fit: cover;
   border-radius: 0.9333rem;
@@ -397,7 +397,7 @@ button:focus-visible {
   }
 
   .profile-photo {
-    max-width: 10.6667rem;
+    max-width: 9.3333rem;     /* photo width on phones and iPads in portrait */
   }
 
   .profile-links {
